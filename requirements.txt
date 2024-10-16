@@ -1,0 +1,5 @@
+keras==3.6.0
+numpy==2.1.2
+pandas==2.2.3
+scikit_learn==1.5.2
+streamlit==1.36.0
