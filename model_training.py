@@ -45,6 +45,8 @@ def train_model():
         validation_data=(x_val, x_val)
     )
     
+    model_path = 'models/recommender_model'
+    autoencoder.save(model_path)
     return autoencoder, rm
 
 if __name__ == "__main__":

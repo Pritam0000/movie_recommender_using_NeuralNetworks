@@ -11,7 +11,14 @@ def load_data():
 
 @st.cache_resource
 def load_model_and_embeddings():
-    model, rm = train_model()
+    try:
+        # Try loading saved model
+        model = tf.keras.models.load_model('models/recommender_model')
+        _, rm, _, _ = load_and_prepare_data()
+    except:
+        # Train if no saved model exists
+        model, rm = train_model()
+    
     embeddings = generate_embeddings(model, rm.values)
     item_sim_matrix = create_similarity_matrix(embeddings, rm)
     return item_sim_matrix, rm
