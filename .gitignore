@@ -9,7 +9,7 @@ env/
 .env
 
 # Data files
-data/*.csv
+#data/*.csv
 
 # Model files
 *.h5
